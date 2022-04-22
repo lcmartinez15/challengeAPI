@@ -5,7 +5,7 @@ const helmet = require("helmet");
 require("express-async-errors");
 const {NotFoundMiddleware} = require("../middlewares");
 
-module.exports= function({ProductRoutes}){
+module.exports= function({ItemRoutes}){
     const router= express.Router();
     const apiRoutes= express.Router();
 
@@ -14,7 +14,7 @@ module.exports= function({ProductRoutes}){
     .use(cors())
     .use(helmet());
 
-    apiRoutes.use("/product", ProductRoutes);
+    apiRoutes.use("/", ItemRoutes);
     router.use("/api/", apiRoutes);
     router.use(NotFoundMiddleware);
     return router;

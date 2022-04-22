@@ -1,3 +1,3 @@
 module.exports={
-    ProductService: require('./product.sevice')
+    ItemService: require('./item.sevice')
 }

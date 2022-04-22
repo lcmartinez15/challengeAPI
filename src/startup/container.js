@@ -2,11 +2,11 @@ const {createContainer, asClass, asFunction, asValue}=  require("awilix");
 const config = require("../config");
 const app = require(".");
 //services
-const {ProductService}= require("../services");
+const {ItemService}= require("../services");
 //Conttrollers
-const {ProductController} = require("../controllers")
+const {ItemController} = require("../controllers")
 //Routes
-const {ProductRoutes} = require("../routes/index.routes");
+const {ItemRoutes} = require("../routes/index.routes");
 const Routes = require("../routes");
 
 const container= createContainer()
@@ -18,13 +18,13 @@ container
         config: asValue(config)
     })
     .register({
-        ProductService: asClass(ProductService).singleton()
+        ItemService: asClass(ItemService).singleton()
     })
     .register({
-        ProductController: asClass(ProductController.bind(ProductController)).singleton()
+        ItemController: asClass(ItemController.bind(ItemController)).singleton()
     })
     .register({
-        ProductRoutes: asFunction(ProductRoutes).singleton()
+        ItemRoutes: asFunction(ItemRoutes).singleton()
     })
     
 module.exports= container;
